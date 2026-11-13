@@ -1,0 +1,500 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					}
+				],
+				"name": "CourierAssigned",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "DeliveryConfirmed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "PaymentReleased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RefundClaimed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "ShipmentCancelled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "ShipmentCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum ParcelChain.Status",
+						"name": "newStatus",
+						"type": "uint8"
+					}
+				],
+				"name": "StatusUpddated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					}
+				],
+				"name": "assignCourier",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelShipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "claimRefund",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "confirmDelivery",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contractBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "createShipment",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getShipment",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "sender",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "receiver",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "courier",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "fee",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum ParcelChain.Status",
+								"name": "status",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPaid",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isRefunded",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct ParcelChain.Shipment",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					}
+				],
+				"name": "registerCourier",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "registeredCouriers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "releasePayment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "shipmentCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "shipments",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum ParcelChain.Status",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bool",
+						"name": "isPaid",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRefunded",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum ParcelChain.Status",
+						"name": "newStatus",
+						"type": "uint8"
+					}
+				],
+				"name": "updateStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ParcelChain.sol": "ParcelChain"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ParcelChain.sol": {
+			"keccak256": "0x0476fe5a3e7867ebfc3d5bdd909062d1268924c96b7ec054bec1f2ab2803ea68",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5167cabc874eae8137311d954828c84606ca44dba0c064af3aab93d6c8af0ce5",
+				"dweb:/ipfs/QmVtLZXJ6sN1cGXC2f12yKGkb8hfwVdhkVxB4A9B8GY96N"
+			]
+		}
+	},
+	"version": 1
+}

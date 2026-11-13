@@ -1,0 +1,504 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					}
+				],
+				"name": "CourierAssigned",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "DeliveryConfirmed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "PaymentReleased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RefundClaimed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "ShipmentCancelled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "ShipmentCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum ChainParcel.Status",
+						"name": "newStatus",
+						"type": "uint8"
+					}
+				],
+				"name": "StatusUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					}
+				],
+				"name": "assignCourier",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelShipment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "claimRefund",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "confirmDelivery",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contractBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "createShipment",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getShipment",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum ChainParcel.Status",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bool",
+						"name": "paidOut",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "refunded",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					}
+				],
+				"name": "registerCourier",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "registeredCouriers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "releasePayment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "shipmentCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "shipments",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "courier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum ChainParcel.Status",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bool",
+						"name": "paidOut",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "refunded",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum ChainParcel.Status",
+						"name": "newStatus",
+						"type": "uint8"
+					}
+				],
+				"name": "updateStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"assignCourier(uint256,address)": {
+					"notice": "VULNERABILITY 1: Access Control Vulnerability (OWASP SC01) ------------------------------------------------------------ This function is meant to be restricted to the logistics company (owner), but the onlyOwner modifier is intentionally left off. Any address can assign itself (or anyone else) as the courier for any shipment. Combined with updateStatus() below (which also lacks a \"msg.sender == s.courier\" check), an attacker can:   1. Call assignCourier(id, attackerAddress)   2. Call updateStatus(id, Status.Delivered)   3. Call releasePayment(id) to steal the escrowed fee      without ever delivering the parcel. Fix (do NOT apply yet - this is intentional for the assignment):   Add `onlyOwner` to assignCourier(), and require   `registeredCouriers[courier] == true`."
+				},
+				"claimRefund(uint256)": {
+					"notice": "VULNERABILITY 2: Reentrancy (OWASP SC05) ------------------------------------------------------------ The external call (sending ETH back to msg.sender) happens BEFORE the state is updated (s.refunded = true / fee = 0). A malicious contract calling this function can re-enter claimRefund() from its receive()/fallback() function and drain the escrowed fee multiple times, taking funds that belong to other shipments' senders and couriers. Fix (do NOT apply yet - this is intentional for the assignment):   Follow checks-effects-interactions: set s.refunded = true   and zero out s.fee BEFORE making the external call, or use   a reentrancy guard (nonReentrant modifier)."
+				},
+				"updateStatus(uint256,uint8)": {
+					"notice": "Also part of VULNERABILITY 1 (OWASP SC01): This function should check `msg.sender == s.courier`, but that check is intentionally omitted so any address can move any shipment straight to Delivered. Fix (do NOT apply yet):   require(msg.sender == s.courier, \"Not assigned courier\");"
+				}
+			},
+			"notice": "ChainParcel - A Blockchain Delivery Tracking and Escrow Contract ACADEMIC NOTE: This contract intentionally contains vulnerabilities from the OWASP Smart Contract Top 10 (2025) for a class assignment. It is built for testing on the Sepolia testnet only, never mainnet. Intentional vulnerabilities:   1. SC01 - Access Control Vulnerability   -> assignCourier(), updateStatus()   2. SC05 - Reentrancy                     -> claimRefund() See the comments marked \"VULNERABILITY\" below for details.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ChainParcel.sol": "ChainParcel"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ChainParcel.sol": {
+			"keccak256": "0x3f2b5701894e4c1db84941fb012af3db9bcb705e590c0549e950ea75736cd2ac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0e7b070b6336861df1987659c5f4fce30fc8d0b90e20bcc2a3b8fbd0be2a5ae1",
+				"dweb:/ipfs/QmNrmuZ15SWfRzyWvWE5EacCDWqNQfwJ5L9mKBh1BDyrXF"
+			]
+		}
+	},
+	"version": 1
+}

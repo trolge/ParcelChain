@@ -1,0 +1,178 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "targetAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_REENTRANCE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "attack",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "attackCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "balance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "createMaliciousShipment",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "shipmentId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "target",
+				"outputs": [
+					{
+						"internalType": "contract ParcelChain",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Attacker.sol": "Attacker"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Attacker.sol": {
+			"keccak256": "0x12fb5f739f7ec06849dfb518eec75e22abb97c090ebc6cc47891c4dd40b3d248",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f1b937cb2f34d46cbd9ef459334e632632242284710013276b19121971386999",
+				"dweb:/ipfs/QmRKb9NdtiEGA29Jw5rr9nqwNvmizT6BnUF6pX6m99sHJe"
+			]
+		},
+		"ParcelChain.sol": {
+			"keccak256": "0x5845086c56f2f6e693039ac8a208604f93f39354d3be7f566de5d2cf96c86876",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://46c2ec0f3c8df13d99dd9ba47ab3473eeffcada6faaa912e3211f6ee1a0589ae",
+				"dweb:/ipfs/QmZx2N7JYeHAvSnSQzVoqeDQWm6KMV87DmM1CFe5fH5DnK"
+			]
+		}
+	},
+	"version": 1
+}
