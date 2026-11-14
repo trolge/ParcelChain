@@ -166,11 +166,11 @@
 			]
 		},
 		"ParcelChain.sol": {
-			"keccak256": "0x5845086c56f2f6e693039ac8a208604f93f39354d3be7f566de5d2cf96c86876",
+			"keccak256": "0x7445bc21991075215c7975da118eb0bb42861e44bb70fac283e10c687b937ee3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://46c2ec0f3c8df13d99dd9ba47ab3473eeffcada6faaa912e3211f6ee1a0589ae",
-				"dweb:/ipfs/QmZx2N7JYeHAvSnSQzVoqeDQWm6KMV87DmM1CFe5fH5DnK"
+				"bzz-raw://fb50f01935e370a607a634cf778de598b47eabc218fd0b463596f673301657ff",
+				"dweb:/ipfs/QmdWvrnfRCXihcUiz6DN5zYgGzUNf1pnLVSBPULqs4rqBW"
 			]
 		}
 	},

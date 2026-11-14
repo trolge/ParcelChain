@@ -18,6 +18,7 @@ contract ParcelChain {
     address public owner;
     uint256 public shipmentCount;
     mapping(uint256 => Shipment) public shipments;
+    mapping(address => uint256[]) private addressToShipments;
     mapping(address => bool) public registeredCouriers;
 
     event ShipmentCreated(uint256 indexed id, address indexed sender, address indexed receiver, uint256 fee, uint256 deadline);
@@ -65,6 +66,9 @@ contract ParcelChain {
             isRefunded: false
         });
 
+        addressToShipments[msg.sender].push(id);
+        addressToShipments[_receiver].push(id);
+
         emit ShipmentCreated(id, msg.sender, _receiver, msg.value, _deadline);
         return id;   
     }
@@ -92,6 +96,7 @@ contract ParcelChain {
      *   and zero out s.fee
      *   or:
      *   set a reentrancy guard (nonReentrant modifier).
+     *   swap out part 1 and 2 for fix
      */
     function claimRefund(uint256 id) external shipmentExists(id) {
         Shipment storage s = shipments[id];
@@ -102,11 +107,11 @@ contract ParcelChain {
 
         uint256 amount = s.fee;
 
-        (bool success, ) = msg.sender.call{value: amount}("");
-        require(success, "Refund transfer failed");
+        (bool success, ) = msg.sender.call{value: amount}("");  //part 1
+        require(success, "Refund transfer failed");             //part 1
 
-        s.isRefunded = true; // state updated after refund call
-        s.status = Status.Refunded;
+        s.isRefunded = true;                                    //part 2
+        s.status = Status.Refunded;                             //part 2
 
         emit RefundClaimed(id, msg.sender, amount);
     }
@@ -135,6 +140,8 @@ contract ParcelChain {
 
         s.courier = courier;
         s.status = Status.Assigned;
+
+        addressToShipments[courier].push(id);
 
         emit CourierAssigned(id, courier);
     }
@@ -189,6 +196,9 @@ contract ParcelChain {
     function getShipment(uint256 id) external view shipmentExists(id) returns (Shipment memory) {
         return shipments[id];
     }
+    function getShipmentsOf(address user) external view returns (uint256[] memory) {
+        return addressToShipments[user];
+    } 
     function contractBalance() external view returns (uint256) {
         return address(this).balance;
     }

@@ -317,6 +317,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getShipmentsOf",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -488,11 +507,11 @@
 	},
 	"sources": {
 		"ParcelChain.sol": {
-			"keccak256": "0x0476fe5a3e7867ebfc3d5bdd909062d1268924c96b7ec054bec1f2ab2803ea68",
+			"keccak256": "0x8a0fd3d707867e52014445fe4cbb1dfee7a96f325db7df2bbde82a5af35b7cde",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5167cabc874eae8137311d954828c84606ca44dba0c064af3aab93d6c8af0ce5",
-				"dweb:/ipfs/QmVtLZXJ6sN1cGXC2f12yKGkb8hfwVdhkVxB4A9B8GY96N"
+				"bzz-raw://c72e100e1f5190f9ffb5a716c6ee8a411b7e290332ccbd4049b2758c6b2dff7d",
+				"dweb:/ipfs/QmfCn6LLzVQWsedhHW9d8sRx6ZWySLdrBsoG9BXRn77pt2"
 			]
 		}
 	},
