@@ -18,7 +18,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "MAX_REENTRANCE",
+				"name": "MAX_REENTER",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -81,7 +81,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "createMaliciousShipment",
+				"name": "createAndCancel",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -158,19 +158,19 @@
 	},
 	"sources": {
 		"Attacker.sol": {
-			"keccak256": "0x12fb5f739f7ec06849dfb518eec75e22abb97c090ebc6cc47891c4dd40b3d248",
+			"keccak256": "0x8825a65570cdc7dd4082b9e57f865aab5548e36a86fb8d66aac166a3f9abd725",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f1b937cb2f34d46cbd9ef459334e632632242284710013276b19121971386999",
-				"dweb:/ipfs/QmRKb9NdtiEGA29Jw5rr9nqwNvmizT6BnUF6pX6m99sHJe"
+				"bzz-raw://5512950c5f0d82ebdef9314e9d16de5b17f4f11fb89aa5ecc2a80d8b57240f17",
+				"dweb:/ipfs/QmcBrAJodAGPCMbjRFzyehJdkKfjpFHzVEGiivQxgQL6J3"
 			]
 		},
 		"ParcelChain.sol": {
-			"keccak256": "0x7445bc21991075215c7975da118eb0bb42861e44bb70fac283e10c687b937ee3",
+			"keccak256": "0x8a0fd3d707867e52014445fe4cbb1dfee7a96f325db7df2bbde82a5af35b7cde",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fb50f01935e370a607a634cf778de598b47eabc218fd0b463596f673301657ff",
-				"dweb:/ipfs/QmdWvrnfRCXihcUiz6DN5zYgGzUNf1pnLVSBPULqs4rqBW"
+				"bzz-raw://c72e100e1f5190f9ffb5a716c6ee8a411b7e290332ccbd4049b2758c6b2dff7d",
+				"dweb:/ipfs/QmfCn6LLzVQWsedhHW9d8sRx6ZWySLdrBsoG9BXRn77pt2"
 			]
 		}
 	},
